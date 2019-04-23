@@ -2,23 +2,23 @@
 const fs = require('fs');
 const path = require('path');
 const {execSync} = require('child_process');
+const percentageDiff = require('percentage-diff');
 
 /**
- * Calculate file size and return human readable representation
+ * Get filesize in bytes
  * @param {string} file Path to file
  *
- * @returns {string} '<size> bytes'
+ * @returns {string} Size in bytes
  */
-function humanFileSize(file) {
-	return `${fs.statSync(file).size} bytes`;
+function fileSizeInBytes(file) {
+	return Number(fs.statSync(file).size);
 }
 
 function logOptimizationResults(oldSize, file, outputFile) {
-	const newSize = humanFileSize(outputFile);
+	const newSize = fileSizeInBytes(outputFile);
+	const diff = percentageDiff(oldSize, newSize);
 
-	console.log('File Size Comparison');
-	console.log(`Original: ${oldSize}`);
-	console.log(`Optimized: ${newSize}\n`);
+	console.log(`Filesize difference ${percentageDiff.toPercentage(diff)} ✂️`);
 	console.log(`Optimized version of ${path.basename(file)} saved as ${outputFile} 🎉`);
 }
 
@@ -41,13 +41,15 @@ module.exports = (file, options = {}) => {
 		return false;
 	}
 
-	const oldSize = humanFileSize(file);
+	const oldSize = fileSizeInBytes(file);
 
 	try {
 		execSync(`\\gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${options.outputFile} ${file}`);
 		logOptimizationResults(oldSize, file, options.outputFile);
 	} catch (error) {
-		console.log(error.stdout.toString());
+		const errMsg = error.stdout ? error.stdout : error;
+		console.log(errMsg.toString());
+
 		return false;
 	}
 

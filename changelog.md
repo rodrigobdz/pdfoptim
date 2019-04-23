@@ -16,6 +16,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-04-24
+
+### Added
+
+- Log percentage difference instead of file size in bytes.
+
+### Fixed
+
+- Made error logging more robust.
+
 ## [1.0.1] - 2019-04-23
 
 ### Fixed
@@ -29,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Optimize file size of PDFs
 
-[unreleased]: https://github.com/rodrigobdz/pdfoptim/compare/v1.0.1...HEAD
+[unreleased]: https://github.com/rodrigobdz/pdfoptim/compare/v1.1.0...HEAD
+[v1.0.1]: https://github.com/rodrigobdz/pdfoptim/compare/v1.0.1...v1.1.0
 [v1.0.1]: https://github.com/rodrigobdz/pdfoptim/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/rodrigobdz/pdfoptim/compare/b30480643d7a74ff1f383674a0f48c735fe73faa...v1.0.0

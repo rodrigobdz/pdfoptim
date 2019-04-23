@@ -14,12 +14,8 @@ $ npm install pdfoptim
 const pdfoptim = require('pdfoptim');
 
 pdfoptim('printer-manual.pdf');
-// File Size Comparison
-// Original: 3595210 bytes
-// Optimized: 738584 bytes
-
-// Optimized version of printer-manual.pdf
-// saved as optimized-1556032400471.pdf 🎉
+// Filesize difference -79.46% ✂️
+// Optimized version of printer-manual.pdf saved as optimized-1556039930343.pdf 🎉
 ```
 
 ## API
@@ -67,6 +63,7 @@ $ pdfoptim --help
 
 ## Credits
 
+* [percentage-diff](https://github.com/rodrigobdz/percentage-diff) - Calculate percentage difference between two numbers
 * [generator-lnm](https://github.com/rodrigobdz/generator-lnm) - Awesome node module generator
 
 ## License
