@@ -4,20 +4,38 @@ const updateNotifier = require('update-notifier');
 const meow = require('meow');
 const pdfoptim = require('.');
 
+const timestamp = Date.now();
 const cli = meow(`
 	Usage
 	  $ pdfoptim [input]
 
 	Options
-	  --foo  Lorem ipsum [Default: false]
+	  --outputFile  my-foo.pdf [Default: optimized-{timestamp}.pdf
 
 	Examples
-	  $ pdfoptim
-	  unicorns & rainbows
-	  $ pdfoptim ponies
-	  ponies & rainbows
-`);
+		$ pdfoptim essay.pdf
+		// Optimized PDF created with name optimized-[timestamp].pdf
+		$ pdfoptim -o essay-optim.pdf essay.pdf
+		// Optimized PDF created with name essay-optim.pdf
+`,
+{
+	flags: {
+		outputFile: {
+			type: 'string',
+			alias: 'o',
+			default: `optimized-${timestamp}.pdf`
+		}
+	}
+});
 
 updateNotifier({pkg: cli.pkg}).notify();
 
-console.log(pdfoptim(cli.input[0] || 'unicorns'));
+const {input: file} = cli;
+
+if (file.length === 0) {
+	console.error('Specify one path');
+	process.exit(1);
+}
+
+const result = pdfoptim(file[0], {outputFile: cli.flags.outputFile}) ? 0 : 1;
+process.exit(result);

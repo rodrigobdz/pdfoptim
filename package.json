@@ -30,7 +30,8 @@
 		"update-notifier": "^2.5.0"
 	},
 	"devDependencies": {
-		"ava": "^0.25.0",
-		"xo": "^0.21.0"
+		"ava": "^1.4.1",
+		"tempy": "^0.3.0",
+		"xo": "^0.24.0"
 	}
 }
