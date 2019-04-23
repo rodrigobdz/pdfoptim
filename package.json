@@ -1,6 +1,6 @@
 {
 	"name": "pdfoptim",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Optimize file size of PDFs",
 	"license": "MIT",
 	"repository": "rodrigobdz/pdfoptim",
