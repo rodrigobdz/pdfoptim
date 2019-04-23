@@ -56,12 +56,12 @@ $ pdfoptim --help
     pdfoptim [filePath]
 
   Options
-    --outputFile  printer-manual.pdf [Default: optimized-{timestamp}.pdf
+    --outputFile  File name for optimized PDF [Default: optimized-{timestamp}.pdf
 
   Examples
     $ pdfoptim essay.pdf
     // Optimized PDF created with name optimized-[timestamp].pdf
-    $ pdfoptim -o essay-optim.pdf essay.pdf
+    $ pdfoptim -o optim-essay.pdf essay.pdf
     // Optimized PDF created with name essay-optim.pdf
 ```
 
