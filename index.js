@@ -14,7 +14,8 @@ function humanFileSize(file) {
 }
 
 function logOptimizationResults(oldSize, file, outputFile) {
-	const newSize = humanFileSize(file);
+	const newSize = humanFileSize(outputFile);
+
 	console.log('File Size Comparison');
 	console.log(`Original: ${oldSize}`);
 	console.log(`Optimized: ${newSize}\n`);
