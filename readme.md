@@ -13,30 +13,35 @@ $ npm install pdfoptim
 ```js
 const pdfoptim = require('pdfoptim');
 
-pdfoptim('unicorns');
-//=> 'unicorns & rainbows'
+pdfoptim('printer-manual.pdf');
+// File Size Comparison
+// Original: 3595210 bytes
+// Optimized: 738584 bytes
+
+// Optimized version of printer-manual.pdf
+// saved as optimized-1556032400471.pdf 🎉
 ```
 
 ## API
 
-### pdfoptim(input, [options])
+### pdfoptim(filePath, [options])
 
-#### input
+#### filePath
 
 Type: `string`
 
-Lorem ipsum.
+Path to PDF file to optimize.
 
 #### options
 
 Type: `Object`
 
-##### foo
+##### outputFile
 
-Type: `boolean`<br>
-Default: `false`
+Type: `string`<br>
+Default: `optimized-{timestamp}.pdf`
 
-Lorem ipsum.
+Filename for optimized PDF.
 
 ## CLI
 
@@ -48,16 +53,16 @@ $ npm install --global pdfoptim
 $ pdfoptim --help
 
   Usage
-    pdfoptim [input]
+    pdfoptim [filePath]
 
   Options
-    --foo  Lorem ipsum [Default: false]
+    --outputFile  printer-manual.pdf [Default: optimized-{timestamp}.pdf
 
   Examples
-    $ pdfoptim
-    unicorns & rainbows
-    $ pdfoptim ponies
-    ponies & rainbows
+    $ pdfoptim essay.pdf
+    // Optimized PDF created with name optimized-[timestamp].pdf
+    $ pdfoptim -o essay-optim.pdf essay.pdf
+    // Optimized PDF created with name essay-optim.pdf
 ```
 
 ## Credits

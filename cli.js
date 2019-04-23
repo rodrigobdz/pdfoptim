@@ -7,10 +7,10 @@ const pdfoptim = require('.');
 const timestamp = Date.now();
 const cli = meow(`
 	Usage
-	  $ pdfoptim [input]
+	  $ pdfoptim [filePath]
 
 	Options
-	  --outputFile  my-foo.pdf [Default: optimized-{timestamp}.pdf
+	  --outputFile  printer-manual.pdf [Default: optimized-{timestamp}.pdf
 
 	Examples
 		$ pdfoptim essay.pdf

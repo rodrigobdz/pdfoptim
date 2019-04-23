@@ -16,11 +16,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2019-04-23
+
+### Fixed
+
+- Update automatically generated readme.
+- Log correct file size of optimized PDF.
+
 ## [1.0.0] - 2019-04-23
 
 ### Added
 
 - Optimize file size of PDFs
 
-[unreleased]: https://github.com/rodrigobdz/pdfoptim/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/rodrigobdz/pdfoptim/compare/v1.0.1...HEAD
+[v1.0.1]: https://github.com/rodrigobdz/pdfoptim/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/rodrigobdz/pdfoptim/compare/b30480643d7a74ff1f383674a0f48c735fe73faa...v1.0.0
