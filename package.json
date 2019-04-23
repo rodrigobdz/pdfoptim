@@ -1,0 +1,36 @@
+{
+	"name": "pdfoptim",
+	"version": "0.0.0",
+	"description": "Optimize file size of PDFs",
+	"license": "MIT",
+	"repository": "rodrigobdz/pdfoptim",
+	"author": {
+		"name": "Rodrigo Bermudez Schettino",
+		"email": "rodrigobermudezschettino@gmail.com",
+		"url": "rodrigobdz.github.io"
+	},
+	"bin": "cli.js",
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"cli.js"
+	],
+	"keywords": [
+		"cli-app",
+		"cli",
+		""
+	],
+	"dependencies": {
+		"meow": "^5.0.0",
+		"update-notifier": "^2.5.0"
+	},
+	"devDependencies": {
+		"ava": "^0.25.0",
+		"xo": "^0.21.0"
+	}
+}
